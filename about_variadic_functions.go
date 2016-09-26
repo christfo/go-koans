@@ -9,12 +9,14 @@ func concatNames(sep string, names ...string) string {
 func aboutVariadicFunctions() {
 	{
 		str := concatNames(" ", "bob", "billy", "fred")
-		assert(str == __string__) // several values can be passed to variadic parameters
+		assert(str == "bob billy fred") // several values can be passed to variadic parameters
 	}
 
 	{
 		names := []string{"bob", "billy", "fred"}
 		str := concatNames("-", names...)
-		assert(str == __string__) // or a slice can be dotted in place of all of them
+		assert(str == "bob-billy-fred") // or a slice can be dotted in place of all of them
+		// str2 := concatNames("-", names)
+		// assert(str2 == "bob-billy-fred") // or a slice can be dotted in place of all of them
 	}
 }
